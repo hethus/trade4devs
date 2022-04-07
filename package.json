@@ -1,0 +1,23 @@
+{
+  "name": "trade4devs",
+  "version": "1.0.0",
+  "description": "Curso de desenvolvedor back-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hethus/trade4devs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hethus/trade4devs/issues"
+  },
+  "homepage": "https://github.com/hethus/trade4devs#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
