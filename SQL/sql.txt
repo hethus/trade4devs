@@ -1,0 +1,43 @@
+SQL é dividido em vários tipos:
+
+1- SQL
+2- NoSQL
+3- NewSQL
+
+------------
+
+-- SQL:
+
+tem como base o ACID (Atomicity, Consistency, Isolation, Durability) ou em português (atomicidade, consistência, isolamento, durabilidade)
+
+    Atomicidade – conclusão da transação como um todo ou nenhuma
+    Consistência – garante o estado estável do banco de dados com ou sem alterações
+    Isolamento – múltiplas transações não interferem umas nas outras
+    Durabilidade – efeito permanente no banco de dados pelas mudanças
+
+banco de dados escalam, mas quanto mais tamanho, maior o custo do hardware
+
+------------
+
+-- NoSQL:
+
+trabalha com grande quantidade de dados.
+Tem falta de padronização.
+são projetados para não depender de hardware e escalar bem em direção horizontal, geralmente tem baixa consistência
+
+NÃO TRABALHA COM ACID, mas utiliza o teorema de CAP:
+    consistência, disponibilidade, tolerância a falha.
+
+    !!PORÉM NUNCA UTILIZA AS TRÊS, sempre será duas!
+
+tipos de bancos:
+
+coluna, documento, chave valor, grafo.
+
+------ (MongoDB é um banco de dados NoSQL e é um dos mais populares, pois é fácil de desenvolver e é flexível.)
+
+------------
+
+-- NewSQL:
+
+surgiu em 2011, é uma mescla do SQL e do NoSQL, ou seja, consegue ter a escalibilidade horizontalmente do NoSQL, mas também tem as 4 propriedades do gerenciamento 
