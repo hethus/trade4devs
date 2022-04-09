@@ -1,0 +1,15 @@
+no banco de dados relacional temos 3 estruturas (níveis):
+
+1- nível externo (ou nível de visão):
+
+    é a visão de nível do usuário, ou seja, variam da necessidade de usuário para usuário.
+    é a ferramenta que utilizamos para visualizar os dados!
+
+2- nível conceitual (e/ou esquema lógico):
+
+    definem quais dados estão sendo armazenados e quais são as relações entre eles.
+
+3- nível físico (ou nível interno):
+
+    é o nível mais baixo
+    é o que define efetivamente como os dados serão armazenados
