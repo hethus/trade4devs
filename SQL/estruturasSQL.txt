@@ -13,3 +13,11 @@ no banco de dados relacional temos 3 estruturas (níveis):
 
     é o nível mais baixo
     é o que define efetivamente como os dados serão armazenados
+
+-----------
+
+Modelagem de dados:
+
+é o ato exploratório de dados coletados de pessoas e processos, pode ser usadas para uma variedade de objetos, passando pelo modelo conceitual, modelo lógico e até o alto modelo físico.
+
+esse processo crítico consiste em escolher
