@@ -20,4 +20,19 @@ Modelagem de dados:
 
 é o ato exploratório de dados coletados de pessoas e processos, pode ser usadas para uma variedade de objetos, passando pelo modelo conceitual, modelo lógico e até o alto modelo físico.
 
-esse processo crítico consiste em escolher
+esse processo crítico consiste em criar estrutura no sistema de armazenamento escolhido, seja banco de dados FISICO ou NA NUVEM para possibilitar o resgate de informação em um determinado PADRÃO e MOMENTO, um erro durante a modelagem, pode comprometer toda a usabilidade do sistema, gerar retrabalho de programação e a necessidade de reformular todo banco de dados, o que sempre aumenta o custo do projeto!
+
+A modelagem de dados contempla todas as atividades relacionadas ao banco de dados, para alcançar um objetivo ou projeto:
+
+- identificar as entidades e atributos.
+- aplicar uma convenção de nomes para padronizar ou hierarquizar os dados.
+- identificar os relacionamentos e aspectos comuns entre os dados.
+- associar chaves para serem requisitados com mais facilidade.
+- normalizar o banco de dados para reduzir a redundância dos dados.
+- diversificar os dados para melhorar o desempenho.
+
+1- fase da modelagem (serve para representar em alto nivel as entidades e seus relacionamentos em um nivel mais macro) -> modelo conceitual (modelo de dominio) é criado para o entendimento do requisito do sistema pois ele explora a estrutura e o conceito do negocio
+
+2- fase da modelagem () -> modelo lógico é usado para explorar o conceito do dominio, ele consiste em determinar quais informações serão necessárias para o banco de dados, divididas em tabelas. Também são definidos nessa fase, os campos das tabelas e seus atributos e propriedades e ainda as chaves primarias e secundarias e seus relacionamentos e as normalizações, alem da integridade referencial.
+
+3- fase da modelagem () -> modelo físico é usado para projetar o esquema interno do banco de dados e descreve as tabelas, as suas colunas e os relacionamentos estabelecidos entre elas, esse modelo fisico nada mais é do que, é um modelo de entidade e relacionamento o famoso MER (modelo de entidade e relacionamento), é um modelo abstrato, cuja a sua funcionalidade é a de descrever de maneira conceitual os dados a serem utilizados em um sistema de informação ou a que pertencem a um dominio.
