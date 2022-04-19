@@ -1,0 +1,72 @@
+obs.:
+
+tinyint: vai de 0 a 255 e ocupa 1 byte
+
+smallint: vai de -2 elavado a 15 a 2 elevado a 15 e ocupa 2 bytes.
+
+int: vai de -2 elevado a 31 a 2 elevado a 31 e ocupa 4 bytes.
+
+bigint: vai de -2 elevado a 63 até 2 elevado a 63 e ocupa 8 bytes usado para armazenar numeros muito grandes!
+
+smallmoney: armazena 4 bytes (é igual um float, consegue detectar ate 4 casas decimais), é mais utilizado para valores monetarios e moedas.
+
+money: armazena 8 bytes (é igual um float, consegue detectar ate 4 casas decimais), é mais utilizado para valores monetarios e moedas.
+
+numeric: tem um atributo chamado p (precisão) que é o maximo de digitos decimais que serão armazenados, antes e depois da virgula.
+
+decimal: tem um atributo chamado p (precisão) que é o maximo de digitos decimais que serão armazenados, antes e depois da virgula.
+
+p (precisão): deve ser um valor de 1 até 38, sendo q a padrão é 18.
+
+----
+
+date: armazena um valor de data, ou seja, um valor de ano, mês e dia. (aaaa/mm/dd)
+
+datetimeoffset: armazena data e hora, e tbm armazena o fuso horário, ocupa mais memoria q o datetime 2.
+
+datetime2: armazena data e hora.
+
+smalldatetime:  Na maioria dos casos, é melhor evitar os dois tipos e usar datetime2 (a Microsoft também recomenda isso), é baseado em um dia de 24 horas, armazena dia e hora, n tem precisão nos segundos, arredondando para o minuto mais perto.
+
+datetime: Na maioria dos casos, é melhor evitar os dois tipos e usar datetime2 (a Microsoft também recomenda isso), é baseado em um dia de 24 horas, armazena dia e hora, e tem precisão nos segundos.
+
+time: só grava a hora.
+
+----
+
+char e varchar: armazena cadeias e caracteres em 1 byte até 8000 bytes.
+
+----
+
+nchar e nvarchar: armazena cadeias e caracteres em 1 byte até 4000 bytes, pq quando ele é utilizado com o UTF-8, ele utiliza a outra posição para gravar a posição
+
+----
+
+binary: os dados binarios tem comprimento fixo com o tamanho de n bytes em que n é um valor de 1 a 8000, e que o armazenamento maximo pode ser entre 2 elevado a 31.
+
+imagem: é um dado fixo de comprimento variavel para armazenar dados de caracteres não Unicode e Unicodes grandes!
+
+varbinary: armazena a mesma coisa do que o "imagem".
+
+----
+
+
+tipos de dados:
+
+1- numéricos exatos - bigint, int, smallint, tinyint, decimal, money, smallmoney, numeric, bit. Para economizar espaço no banco de dados, use o menor tipo de dado que pode conter todos os valores possiveis de maneira confiavel, por exemplo, o tinyint é suficiente para idade de uma pessoa, pq n existe alguem que viva mais que 255 anos (tiny int vai de 0 a 255) e ele armazena apenas um byte, ja o smallint ele vai de -2 elevado a 15 ate 2 elevado a 15 e ocupa 2 bytes, o int ocupa 4 bytes e o bigint ocupa 8 bytes, sempre propõe um mesmo resultado independente do tipo de arquitetura do processador ou da magnitude dos numeros
+
+2- numéricos aproximados - float, real. a quantidade de numeros flutuantes definem a quantidade de bytes que serão usados para armazenar os dados.
+
+3- cadeias de caracteres -  char, varchar, text. 
+
+4- cadeias de caracteres Unicode - nchar, nvarchar, ntext.
+
+5- cadeias de caracteres binárias - binary, varbinary, image.
+
+6- data e hora - date, datetimeoffset, datetime2, smalldatetime, datetime, time. 
+
+7- outros - cursor, rowversion, hierarchiyd,uniqueidentifier, sql_variant, xml, tipos de geometria espacial, tipos de geografia espacial, table.
+
+-----
+
+é um atributo que especifica qual o dado que o objeto pode manter, podendo ser um daqueles listados acima.
