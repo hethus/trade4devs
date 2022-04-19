@@ -1,0 +1,159 @@
+OBS.: getdata(); pega a data do sistema.
+
+OBS.: id int identify; (todo registro recebera um id automatico e sequencial)
+
+Comando DQL:
+
+select * from [tabela]
+
+-> por mais que tenha somente um comando, o comando select é o mais utilizado, permite ao usuario especificar uma consulta (query), é composto por varias clausulas e opções, possibilitando fazer pesquisas desde as mais simples até as mais elaboradas.
+
+exemplo:
+
+use sales.
+
+select top 100 * (seleciona os 100 primeiros resultados)
+
+from TB_PESSOA
+
+===
+
+operadores de comparação:
+
+=, >, <, >=, <=, <> (é diferente de, mais usado no SQL), != (diferente de)
+
+exemplo:
+
+use sales.
+
+select top 100 * (seleciona os 100 primeiros resultados e mostra eles)
+
+from TB_PESSOA
+
+where (condição: onde) NOME = 'Bruno'; (ex2: where data_nascimento > '2000-01-01';)
+
+===
+operadores lógicos:
+
+and, or, not.
+
+exemplo:
+
+where left(NOME, 1) = 'A' [todos que começam com a letra a] and
+data_nascimento >= '1990-07-10'; (mostra todos que deem true nas duas categorias)
+
+where nome = 'Bruno' or
+nome = 'Bruna'; (mostra todos que tem o nome bruno ou bruna)
+
+where nome = 'Bruno' or not
+data_nascimento = '1990-07-10'; (mostra todos que tem o nome bruno e todos que não tem a data de 1990-07-10)
+
+----------------
+
+Comando DML (Data Manipulation Language):
+
+INSERT INTO pessoa (id, nome, sexo)
+VALUES (@id, @nome, @sexo); [ou seja, @ = variavel]
+
+-> é um subconjunto do SQL, que permite ao usuario realizar operações:
+
+inserção, alteração e exclusão de dados.
+
+exemplo:
+
+USE sales;
+
+INSERT INTO tb_pessoa(NOME, DATA_NASCIMENTO, CPF)
+VALUES ('Pedro', '1990-07-10', '123456789'),
+('Bruno', '1990-07-15', '123456780');
+
+===
+
+Update (alteração de dados existentes no banco):
+
+UPDATE pessoa
+SET nome = 'Bruna'
+WHERE id_pessoa = 7; (se n tiver id_pessoa, ele altera todos os dados da tabela)
+
+exemplo:
+
+USE SALES;
+
+update tb_pessoa
+set nome = concat(nome, ' da Silva') [concat = concatenação]
+    ,data_atualizacao = getdate()
+where data_criação > getdata() -1; (altera todos os nomes que tenham sido criados a mais de 1 dia)
+
+===
+
+Delete (exclusão de dados existentes no banco):
+
+DELETE FROM pessoa
+where id_pessoa = 7; (se n tiver id_pessoa, ele exclui todos os dados da tabela!)
+
+----------------
+
+Comando DDL (Data Definition Language):
+
+create table teste (id int, nome varchar(50)); (cria uma tabela teste com id e nome)
+
+-> permite ao usuario criar tabelas e alterar suas estruturas:
+
+Create, alter, drop.
+
+exemplo:
+
+ALTER TABLE teste ADD DATA_NASCIMENTO DATE; (adiciona uma coluna data_nascimento que tem valores de tipos DATE na tabela teste)
+
+exemplo2:
+
+ALTER TABLE teste ADD DATA_CRIACAO DATETIME DEFAULT(GETDATA()); (adiciona uma coluna data_criacao que tem valores de tipos DATETIME na tabela teste e inicializa com a data atual sendo o default)
+
+exemplo3:
+
+DROP TABLE TESTE; (exclui a tabela teste)
+
+EXEMPLO4:
+
+ALTER TABLE TESTE ALTER COLUMN NOME VARCHAR(50); (altera o tipo da coluna nome da tabela teste para varchar(50))
+
+ou
+
+ALTER TABLE TESTE DROP COLUMN NOME; (remove a coluna nome da tabela teste)
+
+----------------
+
+comando DTL:
+
+
+
+-> Uma transação é uma única unidade de trabalho. Se uma transação tiver exito, todas as modificações estarão confirmadas e farão parte do banco de dados, se uma transação falhar, encontrar erros ou precisar ser cancelada, todas as modificações serão desfeitas. são usadas:
+
+begin trans, commit, rollback.
+
+(TOMAR CUIDADO, começar a fazer o begin trans e esquecer de fazer o commit, pode fazer com que a operação se torne muito pesada, tbm assim pode-se perder os dados, pq n estarão salvos definitivamente)
+
+exemplo:
+
+use sales;
+
+create table conta_corrente(
+id int identity not null, (identity = auto increment, e não permitirá nulo)
+num_agencia char(8) not null,
+num_conta char(10) not null,
+valor decimal (10,2) not null,
+data_criacao datetime default(getdate())
+)
+
+begin transaction
+insert into conta_corrente (num_agencia, num_conta, valor)
+values ('12345', '456789', 1000.00)
+
+select * from conta_corrente;
+
+if @@error <> 0
+rollback (desfaz as alterações)
+else
+commit (salva os dados)
+
+select * from conta_corrente;
