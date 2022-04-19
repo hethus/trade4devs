@@ -1,0 +1,44 @@
+OBS.: distinct -> pega valores repetidos
+
+OBS.: pode colocar um nome de tabela sem o _ colocando os nomes dentro de colchetes -> [nome da coluna] de vez nome_da_coluna
+
+Matematica:
+
+AVG, SUM, MAX, MIN, SUBSTRING, DATEPART, DATEDIFF, EOMONTH, LEFT, RIGHT, COUNT.
+
+COUNT = serve para contar quantos registros existem
+
+select count(data_criacao) as qtd from tabela,
+count (distinct data_criacao) as qtd_distinct from tabela;
+
+<->
+
+SUM = serve para somar os valores de uma coluna
+
+select sum(valor) as soma from tabela
+
+<->
+
+MAX = serve para pegar o maior valor de uma coluna ou o que aparece mais.
+
+select max(data_venda) as maior from tabela
+
+<->
+
+MIN = serve para pegar o menor valor de uma coluna ou o que aparece menos.
+
+select min(data_venda) as menor from tabela
+
+<->
+
+AVG = serve para pegar a media de uma coluna.
+
+select avg(valor) as media from tabela
+
+
+<==>
+
+select data_venda, sum(valor_total) soma_total, avg(valor_total) as media [se não especificar as ele funciona do mesmo jeito]
+from tb_vendas
+group by data_venda (como tem varias colunas e não tem função de agregação, temos que colocar o group by)
+order by 2 desc; data_venda asc; (ordena por data da venda do maior para o maior e ordena por valor total do maior para o menor)
