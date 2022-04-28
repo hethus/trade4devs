@@ -2,6 +2,8 @@ OBS.: distinct -> pega valores repetidos
 
 OBS.: pode colocar um nome de tabela sem o _ colocando os nomes dentro de colchetes -> [nome da coluna] de vez nome_da_coluna
 
+OBS.: between -> algo and algo. serve para pegar valores entre dois valores
+
 Matematica:
 
 AVG, SUM, MAX, MIN, SUBSTRING, DATEPART, DATEDIFF, EOMONTH, LEFT, RIGHT, COUNT.
@@ -42,3 +44,58 @@ select data_venda, sum(valor_total) soma_total, avg(valor_total) as media [se n�
 from tb_vendas
 group by data_venda (como tem varias colunas e não tem função de agregação, temos que colocar o group by)
 order by 2 desc; data_venda asc; (ordena por data da venda do maior para o maior e ordena por valor total do maior para o menor)
+
+-----------------------------------------------
+
+Data:
+
+datepart, dateadd, EOMONTH
+
+<->
+
+datepart = serve para pegar o ano, mes, dia, separadamente.
+
+datepart(year, data) -> pega o ano
+datepart(month, data) -> pega o mes
+datepart(day, data) -> pega o dia
+
+<==>
+
+dateadd = serve para somar ou subtrair datas.
+
+dateadd(month, 1, data) -> soma 1 mês a data
+dateadd(day, -1, data) -> subtrai 1 dia a data
+
+<==>
+
+EOMONTH = serve para pegar a data do último dia do mês.
+
+EOMONTH(getdate()) -> pega a data do último dia do mês atual.
+
+-----------------------------------------------
+
+texto:
+
+SUBSTRING, LEFT, RIGHT
+
+<->
+
+SUBSTRING = 
+
+<->
+
+LEFT = serve para pegar o texto a esquerda de uma determinada quantidade de caracteres.
+
+left(nome, 1) = 'a' -> pega todos que tem a primeira letra da coluna nome com a letra a
+
+<->
+
+RIGHT = serve para pegar o texto a direita de uma determinada quantidade de caracteres.
+
+right(nome, 1) = 'a' -> pega todos que tem a ultima letra da coluna nome com a letra a
+
+<->
+
+SUBSTRING = serve para pegar o texto a partir de uma determinada posição e a quantidade de caracteres.
+
+SUBSTRING(cpf, 3, 1) = [36] -> verifica a partir do 3º caractere, e verifica 1 caractere, podendo ser 3 ou 6.
