@@ -1,0 +1,71 @@
+Conceito de chave: temos duas chaves, uma primary key e outra foreign key.
+
+primary key: nunca pode ter valor nulo e n pode ter nenhuma repetição, podem ser usadas para criar relacionamento com outras tabelas.
+
+ex: inner join
+
+<==>
+
+foreign key: é uma chave estrangeira, que aponta para uma chave primaria de outra tabela ou da mesma tabela.
+
+----------------------------------------------------------------------------------------------------------------------
+
+relacionamento:
+
+inner join, left join, right join, full join, cross join.
+
+<==>
+
+inner join: pode ser usado para verificar valores que existem em duas ou mais tabelas.  
+
+<==>
+
+left join: pode ser usado para verificar valores que existem em uma tabela e não em outra, no caso tudo q existe na tabela a e n existe na tabela b.
+
+<==>
+
+right join: pode ser usado para verificar valores que existem em uma tabela e não em outra, no caso tudo q existe na tabela b e n existe na tabela a.
+
+<==>
+
+cross join: ele relaciona tudo da tabela A com tudo da tabela B, criando todas possibilidades de relacionamento.
+
+<==>
+
+full join: ele mostra tudo das duas tabelas e mostra o que falta relacionamento.
+
+----------------------------------------------------------------------------------------------------------------------
+
+Index:
+
+unique, clustered, nonclustered
+
+<==>
+
+unique: cria uma restrição de valores únicos, não pode ter nenhuma repetição. é quase igual a primary key, com a diferença que pode existir varios unique.
+
+create unique index on table_name (column_name);
+
+<==>
+
+O índice clusterizado é quase um sinônimo de chave primária. De fato só pode usar um por tabela e tem que ser na ordem da inserção dos dados, o que obviamente exclui chaves primárias naturais. Em um índice assim a chave é a posição onde o dado está. Na verdade ele é a própria tabela.
+
+<==>
+
+nonclustered: O índice não clusterizado são todos os outros índices onde você terá uma chave qualquer e um apontador para a tabela de dados. Então há sempre duas pesquisas, uma no índice non-cluster e depois sabendo qual a posição dele buscará o dado de fato na tabela, que até pode ser um índice clusterizado.
+
+----------------------------------------------------------------------------------------------------------------------
+
+View:
+
+View, procedure.
+
+<==>
+
+View: faz com que o sql salve em sua memoria um select personalizado, onde tu não precise ficar colocando o mesmo select.
+
+<==>
+
+procedure (stored procedure): pode reduzir o trafego de dados, melhora a performance do sistema, cria tarefas agendadas, diminui riscos e cria rotinas de processamentos.
+
+cria uma função e é armazenada no banco de dados, se chamar a função ela é executada e retorna o resultado, n precisando escrever varias vezes o mesmo código!
