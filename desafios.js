@@ -9,16 +9,16 @@ function calc(first, operador, second){
 
     switch(operador){
         case "+":
-            console.log(first + second);
+            console.log(chalk.hex('#FA7610')(`O resultado da operação de soma é: ${chalk.red(first + second)}`));
             break;
         case "-":
-            console.log(first - second);
+            console.log(chalk.hex('#FA7610')(`O resultado da operação de subtração é: ${chalk.red(first - second)}`));
             break;
         case "*":
-            console.log(first * second);
+            console.log(chalk.hex('#FA7610')(`O resultado da operação de multiplicação é: ${chalk.red(first * second)}`));
             break;
         case "/":
-            console.log(first / second);
+            console.log(chalk.hex('#FA7610')(`O resultado da operação de divisão é: ${chalk.red(first / second)}`));
             break;
     }
 };
@@ -28,7 +28,7 @@ let first = await prompt({
     name: 'numero',
     message: chalk.cyan('Primeiro valor: '),
     validate: (value) => {
-        if (value != " " && value != null && !isNaN(value) && value != undefined && value != "") {
+        if (value != " " && !isNaN(value) && value != "") {
           return true;
         }
         return "Digite um número válido!";
@@ -55,7 +55,7 @@ let second = await prompt({
     name: 'numero',
     message: chalk.cyan('Segundo valor: '),
     validate: (value) => {
-        if (value != " " && value != null && !isNaN(value) && value != undefined && value != "") {
+        if (value != " " && !isNaN(value) && value != "") {
           return true;
         }
         return "Digite um número válido!";
