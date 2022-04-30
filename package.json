@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Curso de desenvolvedor back-end",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,8 @@
   },
   "homepage": "https://github.com/hethus/trade4devs#readme",
   "dependencies": {
+    "chalk": "^5.0.1",
+    "enquirer": "^2.3.6",
     "prompt-sync": "^4.2.0"
   }
 }
