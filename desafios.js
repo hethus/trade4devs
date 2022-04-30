@@ -6,15 +6,21 @@ console.clear();
 function calc(first, operador, second){
     first = parseFloat(first);
     second = parseFloat(second);
-    if(operador === '+'){
-        console.log(first + second);
-    }else if(operador === '-'){
-        console.log(first - second);
-    }else if(operador === '*'){
-        console.log(first * second);
-    }else if(operador === '/'){
-        console.log(first / second);
-    };
+
+    switch(operador){
+        case "+":
+            console.log(first + second);
+            break;
+        case "-":
+            console.log(first - second);
+            break;
+        case "*":
+            console.log(first * second);
+            break;
+        case "/":
+            console.log(first / second);
+            break;
+    }
 };
 
 let first = await prompt({
